@@ -1,0 +1,194 @@
+{
+  "benchmark": "BEAM 1M (arXiv 2510.27246)",
+  "corpus": {
+    "conversations": 35,
+    "turns": 74630,
+    "memories": 2212504,
+    "ingest_failures": 1,
+    "truncated_turns_over_8000_chars": 211
+  },
+  "engine": {
+    "model": "tablet-2",
+    "sha256_16": "cfee6b9deacd17ae"
+  },
+  "reader": {
+    "model": "claude-opus-5",
+    "effort": "max",
+    "via": "claude -p"
+  },
+  "judge": {
+    "model": "openai/gpt-4.1-mini",
+    "temperature": 0,
+    "prompt": "BEAM unified_llm_judge_base_prompt, verbatim",
+    "note": "BEAM's paper does not name a judge model; this is the repo default"
+  },
+  "scoring": {
+    "rubric": "per item 1.0/0.5/0.0, mean per question",
+    "event_ordering": "Kendall tau-b normalised (tau+1)/2, per report_results.py",
+    "not_implemented": "event_ordering final_score (tau x f1) is not used, matching report_results.py which aggregates tau_norm"
+  },
+  "runs": {
+    "beam700_C": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 3,
+        "expand": true,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "ctx": "dates,rel,archive,list_format",
+        "dedup": true,
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 19,
+      "context_chars_median": 64207.5,
+      "beam_score": 70.3
+    },
+    "beam700_r2": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 3,
+        "expand": false,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "ctx": "content-only",
+        "prompt": "default",
+        "dedup": false,
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 0,
+      "context_chars_median": 12033.5,
+      "beam_score": 67.7
+    },
+    "beam700_r3": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 3,
+        "expand": false,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "ctx": "content-only",
+        "prompt": "default",
+        "dedup": false,
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 0,
+      "context_chars_median": 12033.5,
+      "beam_score": 67.3
+    },
+    "beam700_r4": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 3,
+        "expand": false,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "ctx": "content-only",
+        "prompt": "default",
+        "dedup": false,
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 0,
+      "context_chars_median": 11999.0,
+      "beam_score": 67.1
+    },
+    "beam700_r5": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 3,
+        "expand": false,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "ctx": "content-only",
+        "prompt": "default",
+        "dedup": false,
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 0,
+      "context_chars_median": 11999.0,
+      "beam_score": 67.5
+    },
+    "beam700_v0": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 0,
+        "expand": false,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 2,
+      "context_chars_median": 3884.0,
+      "beam_score": 58.6
+    },
+    "beam700_v3": {
+      "config": {
+        "tasks": "beam_tasks_v2.json",
+        "n_tasks": 700,
+        "limit": 20,
+        "verify": 3,
+        "expand": false,
+        "reader": "claude-opus-5 (maximum reasoning effort)",
+        "judge": "none",
+        "tokenizer": "none",
+        "lanes": "both",
+        "base_url": "preview endpoint",
+        "sdk_version": "2.2.30",
+        "concurrency": 6,
+        "retries": 4
+      },
+      "n": 700,
+      "errors": 0,
+      "context_chars_median": 11950.0,
+      "beam_score": 67.8
+    }
+  },
+  "sdk_version": "2.2.30"
+}
