@@ -5,8 +5,8 @@ Three stages, in order:
 
     retrieve (WOS)  ->  answer (your LLM)  ->  grade (a second LLM)
 
-WOS does the first stage only. Retrieval is purely semantic, runs no LLM, and uses
-no BM25 or keyword matching, so it behaves the same in every language. The answer
+WOS does the first stage only. It runs no LLM and behaves the same in every
+language, whichever language a memory was written in. The answer
 and the grade come from models you choose and pay for. Nothing here grades its own
 output.
 
